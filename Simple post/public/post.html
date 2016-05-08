@@ -1,0 +1,15 @@
+<div id="post-stream">
+  <div ng-repeat="post in allPost | orderBy:'-likes'" ng-class-odd="'odd'" ng-class-even="'even'" > 
+    <p>{{post.text}}</p>
+    <span ng-click="like(post)">{{post.likes}} <a>like</a></span>
+    <small>Posted by @{{post.created_by}}</small>
+    <small>{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+  </div>
+
+  <form ng-Submit="post()">
+    <input required class="form" type="text" placeholder="Your name" ng-model="newPost.created_by" /> 
+    <textarea required class="form" maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+    <input type="submit" class="btn" value="Post!" />
+  </form>
+
+</div>
