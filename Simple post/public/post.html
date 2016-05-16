@@ -1,9 +1,12 @@
 <div id="post-stream">
   <div ng-repeat="post in allPost | orderBy:'-likes'" ng-class-odd="'odd'" ng-class-even="'even'" > 
-    <p>{{post.text}}</p>
-    <span ng-click="like(post)">{{post.likes}} <a>like</a></span>
-    <small>Posted by @{{post.created_by}}</small>
-    <small>{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+    <p>{{post.created_by}}    <small>says</small>    "{{post.text}}" </p>
+    <p> 
+      <span ng-click="like(post)"><a> {{post.likes}} like  </a>  </span>
+      <span ><a href="#/posts/{{post._id}}">  comment  </a>  </span>
+      <span ng-click="delete(post)"><a>  delete  </a></span>
+      <small class="right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+    </p>
   </div>
 
   <form ng-Submit="post()">

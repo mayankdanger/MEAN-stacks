@@ -31,15 +31,22 @@ body {
 	padding: 10px 20px;
 }
 
-span{
-	background-color: #b1dbff;
+.right {
+    position: absolute;
+    right: 0px;
 }
 
 a:hover{
-	color: black;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a{
-	color: red;
+	color: #000080;
+	text-decoration: underline;
+	padding-right: 10px;
+}
+
+#post{
+	padding: 20px 40px;
+	background-color: #d3d3d3;
 }

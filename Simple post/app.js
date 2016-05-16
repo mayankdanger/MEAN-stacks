@@ -4,9 +4,10 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 
-require('./model/model');
+require('./model/Post');
+require('./model/Comment');
 var index = require('./routes/index');
-//var api = require('./routes/api');
+var api = require('./routes/api');
 
 var app = express();
 var router = express.Router();
@@ -19,9 +20,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-//app.use('/api', api);
+app.use('/api', api);
 
 app.listen(3000,function(){
-	console.log('Server Started...');
+	console.log('Server Started at port 3000');
 });
 

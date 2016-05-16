@@ -1,0 +1,26 @@
+<div id="post">
+  <p>{{post.created_by}}  <small>says</small> "{{post.text}}"</p>
+  <p>
+      <span ng-click="likePost(post)"><a> {{post.likes}} like  </a>  </span>
+      <small class="right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+  </p>
+</div>
+
+<div id="comment-stream">
+
+  <div ng-repeat="comment in allComments | orderBy:'created_at'" ng-class-odd="'odd'" ng-class-even="'even'" > 
+    <p>{{comment.created_by}}    <small>says</small>    "{{comment.text}}" </p>
+    <p> 
+      <span ng-click="likeComment(comment)"><a> {{comment.likes}} like  </a>  </span>
+      <span ng-click="delete(comment)"><a>  delete  </a></span>
+      <small class="right">{{comment.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+    </p>
+  </div>
+
+  <form ng-Submit="comment()">
+    <input required class="form" type="text" placeholder="Your name" ng-model="newComment.created_by" />
+    <textarea required class="form" maxlength="200" rows="3" placeholder="Say something" ng-model="newComment.text"></textarea>
+    <input type="submit" class="btn" value="Comment!" />
+  </form>
+
+</div>
