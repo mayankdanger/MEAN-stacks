@@ -5,12 +5,12 @@ body{
 #comment-stream .section {
 	background-color: #f6f7f9 ;
 	padding: 10px 20px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 #post-stream .section {
 	background-color: #ffffff;
 	padding: 10px 20px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 a:hover ,span:hover{
