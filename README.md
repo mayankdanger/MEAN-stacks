@@ -1,6 +1,12 @@
 # MEAN-stacks
 Mean stacks based twitter kind of app
 
-On the way to post - comment - like.
+To start the app start mongoDB server 
+then open command promt in the folder loacation 
+then npm install
+then node app.js
+open your browser at http://localhost:3000
 
-Under process Due to error in connecting server (internal server error).
+that's it you got your app
+
+Enjoy post comment and like of own
