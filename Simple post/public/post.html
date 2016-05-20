@@ -1,18 +1,37 @@
 <div id="post-stream">
-  <div ng-repeat="post in allPost | orderBy:'-likes'" ng-class-odd="'odd'" ng-class-even="'even'" > 
-    <p>{{post.created_by}}    <small>says</small>    "{{post.text}}" </p>
-    <p> 
-      <span ng-click="like(post)"><a> {{post.likes}} like  </a>  </span>
-      <span ><a href="#/posts/{{post._id}}">  comment  </a>  </span>
-      <span ng-click="delete(post)"><a>  delete  </a></span>
-      <small class="right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
-    </p>
-  </div>
 
-  <form ng-Submit="post()">
-    <input required class="form" type="text" placeholder="Your name" ng-model="newPost.created_by" /> 
-    <textarea required class="form" maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
-    <input type="submit" class="btn" value="Post!" />
-  </form>
+  <div ng-repeat="post in allPost | orderBy:'-likes'" > 
+    <div class="section z-depth-2"  ng-class-odd="'odd'" ng-class-even="'even'">
+      <h5>{{post.created_by}}</h5>
+      <p>{{post.text}}</p>
+      <p> 
+        <span ng-click="like(post)"><a> {{post.likes}} like  </a>  </span>
+        <span ><a href="#/posts/{{post._id}}">  comment  </a>  </span>
+        <span ng-click="delete(post)"><a>  delete  </a></span>
+        <small class="right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+      </p>
+    </div>
+  </div>
+  
+  <div id="postForm" class="container z-depth-2">
+    <form ng-Submit="post()">
+
+    <div class="row">
+          <div class="input-field col s6">
+            <input id="Name" required type="text" length="10" ng-model="newPost.created_by">
+            <label for="Name">Name</label>
+          </div>
+
+          <div class="input-field col s6">
+            <textarea id="textarea" required class="materialize-textarea" length="120" ng-model="newPost.text"></textarea>
+            <label for="textarea">Whats on you're mind!</label>
+          </div>
+    </div>
+
+      <button class="btn right" type="submit" name="action">POst!</button>
+
+    </form>
+
+  </div>
 
 </div>

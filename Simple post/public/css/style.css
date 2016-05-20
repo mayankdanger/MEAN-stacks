@@ -1,52 +1,37 @@
-body {
-	padding-top:70px;
-	width: 100%;
-    height: 100%;
-	width: 100%;
-    height: 100%;
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-
-.form {
-	margin-top: 20px;
-	width: 60%;
-	height: 30px;
-	margin-bottom: 20px;
-}
-
-.btn{
-	color: #fff;
-	background-color: #337ab7;
-	margin: 10px 0 10px 0;
-	padding: 10px 20px 10px 20px;
-	border-radius: 6px;
-}
-
 .odd {
 	background-color: #f2f9ff;
 	padding: 10px 20px;
+	margin: 10px 20px;
 }
 .even {
 	background-color: #eceff3;
 	padding: 10px 20px;
-}
-
-.right {
-    position: absolute;
-    right: 0px;
+	margin: 10px 20px;
 }
 
 a:hover{
-	text-decoration: none;
+	cursor: pointer;
 }
 
 a{
-	color: #000080;
-	text-decoration: underline;
-	padding-right: 10px;
+	margin-right: 10px;
 }
 
 #post{
 	padding: 20px 40px;
 	background-color: #d3d3d3;
+}
+
+#Posts{
+	padding-top: 20px;
+}
+
+#postForm{
+	padding: 10px 20px 50px 20px;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+#navBar{
+	padding-left: 20px;
 }

@@ -1,5 +1,6 @@
-<div id="post">
-  <p>{{post.created_by}}  <small>says</small> "{{post.text}}"</p>
+<div id="post" class="section z-depth-2">
+  <h5>{{post.created_by}} </h5>
+  <p>{{post.text}}</p>
   <p>
       <span ng-click="likePost(post)"><a> {{post.likes}} like  </a>  </span>
       <small class="right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
@@ -7,20 +8,36 @@
 </div>
 
 <div id="comment-stream">
-
-  <div ng-repeat="comment in allComments | orderBy:'created_at'" ng-class-odd="'odd'" ng-class-even="'even'" > 
-    <p>{{comment.created_by}}    <small>says</small>    "{{comment.text}}" </p>
+  <p>Comments</p>
+  <div class="section z-depth-2" ng-repeat="comment in allComments | orderBy:'created_at'" ng-class-odd="'odd'" ng-class-even="'even'" > 
+    <h5>{{comment.created_by}} </h5>
+    <p>{{comment.text}}</p>
     <p> 
       <span ng-click="likeComment(comment)"><a> {{comment.likes}} like  </a>  </span>
       <span ng-click="delete(comment)"><a>  delete  </a></span>
       <small class="right">{{comment.created_at | date:"h:mma 'on' MMM d, y"}}</small>
     </p>
   </div>
+ 
+  <div id="postForm" class="container z-depth-2">
+    <form ng-Submit="comment()">
 
-  <form ng-Submit="comment()">
-    <input required class="form" type="text" placeholder="Your name" ng-model="newComment.created_by" />
-    <textarea required class="form" maxlength="200" rows="3" placeholder="Say something" ng-model="newComment.text"></textarea>
-    <input type="submit" class="btn" value="Comment!" />
-  </form>
+    <div class="row">
+          <div class="input-field col s6">
+            <input id="Name" required type="text" length="10" ng-model="newComment.created_by">
+            <label for="Name">Name</label>
+          </div>
+
+          <div class="input-field col s6">
+            <textarea id="textarea" required class="materialize-textarea" length="120" ng-model="newComment.text"></textarea>
+            <label for="textarea">Whats on you're mind!</label>
+          </div>
+    </div>
+
+      <button class="btn right" type="submit" name="action">CommenT!</button>
+
+    </form>
+
+  </div>
 
 </div>
