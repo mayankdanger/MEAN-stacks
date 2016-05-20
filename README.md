@@ -1,10 +1,14 @@
 # MEAN-stacks
 Mean stacks based twitter kind of app
 
-To start the app start mongoDB server 
-then open command promt in the folder loacation 
+To start the app start mongoDB server
+
+then open command promt in the folder loacation
+
 then npm install
+
 then node app.js
+
 open your browser at http://localhost:3000
 
 that's it you got your app
