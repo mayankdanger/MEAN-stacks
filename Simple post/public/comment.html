@@ -1,22 +1,35 @@
 <div id="post" class="section z-depth-2">
-  <h5>{{post.created_by}} </h5>
-  <p>{{post.text}}</p>
   <p>
-      <span ng-click="likePost(post)"><a> {{post.likes}} like  </a>  </span>
-      <small class="right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+        <a class="font-medium  navy-blue">{{post.created_by}} </a> 
+        <medium> {{post.text}}</medium> 
+  </p>
+
+  <div class="divider"></div>
+  <p class="greyColor"> 
+    <span class="blueColor"><i class="tiny material-icons">thumb_up</i> {{post.likes}}</span>
+    <span ng-click="like(post)" ><i class="tiny material-icons">thumb_up</i> Like</span>
+    <small class="right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
   </p>
 </div>
 
 <div id="comment-stream">
-  <p>Comments</p>
-  <div class="section z-depth-2" ng-repeat="comment in allComments | orderBy:'created_at'" ng-class-odd="'odd'" ng-class-even="'even'" > 
-    <h5>{{comment.created_by}} </h5>
-    <p>{{comment.text}}</p>
-    <p> 
-      <span ng-click="likeComment(comment)"><a> {{comment.likes}} like  </a>  </span>
-      <span ng-click="delete(comment)"><a>  delete  </a></span>
-      <small class="right">{{comment.created_at | date:"h:mma 'on' MMM d, y"}}</small>
-    </p>
+  <span id="commento" class="greyColor" >
+    <i class="tiny material-icons">comment</i>
+    <STRONG> Comments</STRONG>
+  </span>
+  <div class="section z-depth-2" ng-repeat="comment in allComments | orderBy:'created_at'">
+    <p>
+        <a class="font-medium  navy-blue">{{comment.created_by}} </a> 
+        <medium> {{comment.text}}</medium> 
+        <a ng-click="delete(comment)" class="right greyColor tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip"><i class="tiny material-icons width-14">clear</i></a>
+      </p>
+
+      <div class="divider"></div>
+      <p class="greyColor">
+        <span class="blueColor"><i class="tiny material-icons">thumb_up</i> {{comment.likes}}</span> 
+        <span ng-click="likeComment(comment)" ><i class="tiny material-icons">thumb_up</i> Like</span>
+        <small class="right">{{comment.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+      </p>
   </div>
  
   <div id="postForm" class="container z-depth-2">
@@ -34,7 +47,7 @@
           </div>
     </div>
 
-      <button class="btn right" type="submit" name="action">CommenT!</button>
+      <button class="btn right indigo darken-4" type="submit" name="action"><i class="tiny material-icons left">chat_bubble_outline</i>CommenT</button>
 
     </form>
 
